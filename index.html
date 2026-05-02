@@ -57,20 +57,13 @@
           <!-- Title Section -->
           <tr>
             <td style="padding:24px;">
-              <h1 style="margin:0; font-size:20px; font-weight:600; color:#101828; line-height:28px;">
-                Action Required: Invitation Failed
-              </h1>
 
-              <p style="margin:24px 0 0 0; font-size:16px; color:#344054; line-height:24px;">
+              <p style="margin:0px; font-size:16px; color:#344054; line-height:24px;">
                 Hello {{Inviter Name}}
               </p>
 
               <p style="margin:16px 0 0 0; font-size:16px; line-height:24px; color:#344054;">
-                The invitation sent to {{InviteeFullName}} could not be delivered.
-              </p>
-
-              <p style="margin:16px 0 0 0; font-size:16px; line-height:24px; color:#344054;">
-                You must update the email or resend the invitation after correcting the issue.
+                The invitation sent to {{InviteeFullName}} has expired because the account was not activated within the allowed timeframe.
               </p>
             </td>
           </tr>
@@ -79,14 +72,14 @@
           <tr>
             <td style="padding:0 24px 8px 24px;">
               <h2 style="margin:0; font-size:16px; font-weight:600; color:#344054; line-height:24px;">
-                Failure details
+                Invitation Details:
               </h2>
             </td>
           </tr>
 
           <!-- Failure Details -->
           <tr>
-            <td style="padding:0 24px 24px 24px;">
+            <td style="padding:0 24px 0px 24px;">
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
 
@@ -102,19 +95,11 @@
                           <table width="100%" cellpadding="0" cellspacing="0" border="0"
                             style="border-bottom:1px solid #eeeeee; padding-bottom:12px;">
                             <tr>
-                              <td style="font-size:14px; font-weight:600; color:#344054;">
-                                Robert Mike
+                              <td style="font-size:12px; line-height: 18px; font-weight: 400; color:#4f4f4f;">
+                                Invitee Name
                               </td>
-                              <td align="right">
-                                <span style="background:#fdefef;
-                                            color:#EB5757;
-                                            font-size:12px;
-                                            padding:5px 12px;
-                                            border-radius:7px;
-                                            border:1px solid #EB5757;
-                                            display:inline-block;">
-                                  Failed
-                                </span>
+                              <td align="right" style="font-size:12px; line-height: 18px; font-weight: 500; color:#333333;">
+                                {{InviteeName}}
                               </td>
                             </tr>
                           </table>
@@ -127,21 +112,21 @@
                                   font-size:12px; color:#4f4f4f; line-height:18px;">
                           <table width="100%">
                             <tr>
-                              <td style="padding-bottom:6px;">Invitee Email</td>
-                              <td align="right" style="padding-bottom:6px; color:#333333; font-weight:500;">
+                              <td style="padding-bottom:8px; width: 140px;">Invitee Email</td>
+                              <td align="right" style="padding-bottom:8px; color:#333333; font-weight:500;">
                                 {{Invitee Email}}
                               </td>
                             </tr>
                             <tr>
-                              <td style="padding-bottom:6px;">Reason</td>
-                              <td align="right" style="padding-bottom:6px; color:#333333; font-weight:500;">
-                               The invitation sent to {{InviteeFullName}} could not be delivered The invitation sent to {{InviteeFullName}} could not be delivered
+                              <td style="padding-bottom:8px; width: 140px;">Invitation Sent On</td>
+                              <td align="right" style="padding-bottom:8px; color:#333333; font-weight:500;">
+                               {{InvitationSentDate}}
                               </td>
                             </tr>
                             <tr>
-                              <td style="padding-bottom:6px;">Timestamp</td>
-                              <td align="right" style="padding-bottom:6px; color:#333333; font-weight:500;">
-                                {{Failure_Timestamp}}
+                              <td style="padding-bottom:8px; width: 140px;">Expiration Date</td>
+                              <td align="right" style="padding-bottom:8px; color:#333333; font-weight:500;">
+                                {{ExpirationDate}}
                               </td>
                             </tr>
                           </table>
@@ -156,23 +141,25 @@
             </td>
           </tr>
 
+          <tr>
+            <td style="padding:24px;">
+              <p style="margin:0px; font-size:16px; line-height:24px; color:#344054; font-weight: 400;">
+                To grant access, you will need to resend a new invitation. Expired invitations cannot be reactivated.
+              </p>
+            </td>
+          </tr>
+
           <!-- Footer Text -->
           <tr>
             <td style="border-top:1px solid #f5f5f5;
-                       padding:16px 24px 0 24px;
+                       padding:16px 38px 0 24px;
                        font-size:14px;
                        color:#667085;
                        line-height:20px;">
-              This email was sent to
-              <a href="mailto:irontrac@mail.com" style="color:#2563EB; text-decoration:none;">
-                irontrac@mail.com
-              </a>.
-              If you'd rather not receive this kind of email, you can
-              <a href="#" style="color:#2563EB; text-decoration:none;">unsubscribe</a>
-              or
-              <a href="#" style="color:#2563EB; text-decoration:none;">
-                manage your email preferences
-              </a>.
+              If you need to make any changes to the user’s access or require assistance, please contact the IronTrac support team at 
+              <a href="#" style="color:#175FFF; text-decoration:none;">
+                {{support_email}}
+              </a>
             </td>
           </tr>
 
@@ -181,11 +168,11 @@
             <td style="padding:10px 24px 24px 24px;">
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td class="mobile-stack-center" style="font-size:12px; color:#667085; line-height:18px;">
+                  <td class="mobile-stack-center" style="font-size:12px; color:#667085; line-height:18px; font-weight: 400;">
                     © 2025 IronTrac, Do not reply to this email.
                   </td>
 
-                  <td align="right" class="mobile-stack-center" style="font-size:12px; color:#828282;">
+                  <td align="right" class="mobile-stack-center" style="font-size:10px; color:#828282;">
                     <a href="https://www.irontrac.com/privacy" style="color:#828282; text-decoration:none;">
                       Privacy Policy
                     </a> |
